@@ -1,0 +1,33 @@
+{
+
+  "manifest_version": 2,
+  "name": "QTiT",
+  "version": "1.0",
+  "icons": {
+    "48": "qtit.png"
+  }, 
+  "browser_action": {
+    "default_icon": "qtit.png",
+    "default_title": "QTiT",
+    "default_popup": "twitterShare.html"
+  },	
+  "description": "Lets you share a text snippet to Twitter.",
+  "permissions": [
+        "contextMenus",
+        "storage",
+        "activeTab"
+      ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["qtit.js"]
+    }],
+   "commands": {
+     "_execute_browser_action": {
+       "suggested_key": {
+         "default": "Alt+T"
+       }
+     }
+   }
+
+}
